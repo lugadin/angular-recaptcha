@@ -5,27 +5,28 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         meta: {
             banner: '/**\n' +
-                ' * <%= pkg.name %> build:<%= grunt.template.today("yyyy-mm-dd") %> \n' +
-                ' * <%= pkg.homepage %> \n' +
-                ' * Copyright (c) <%= grunt.template.today("yyyy") %> VividCortex \n' +
-                '**/\n\n'
+                    ' * <%= pkg.name %> build:<%= grunt.template.today("yyyy-mm-dd") %> \n' +
+                    ' * <%= pkg.homepage %> \n' +
+                    ' * Copyright (c) <%= grunt.template.today("yyyy") %> VividCortex \n' +
+                    '**/\n\n'
         },
         concat: {
-            options: { banner: '<%= meta.banner %>' },
+            options: {banner: '<%= meta.banner %>'},
             dist_js: {
                 src: [
                     '<banner>',
                     'src/module.js',
+                    'src/provider.js',
                     'src/service.js',
-                    'src/directive.js'
+                    'src/directive.js',
                 ],
                 dest: 'release/<%= pkg.name %>.js'
             }
         },
         uglify: {
-            options: { banner: '<%= meta.banner %>' },
+            options: {banner: '<%= meta.banner %>'},
             release: {
-                src:  'release/<%= pkg.name %>.js',
+                src: 'release/<%= pkg.name %>.js',
                 dest: 'release/<%= pkg.name %>.min.js'
             }
         },
@@ -44,7 +45,6 @@ module.exports = function (grunt) {
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
             }
         },
-
     });
 
     // Load the plugin that provides the needed tasks.

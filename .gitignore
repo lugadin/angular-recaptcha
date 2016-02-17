@@ -7,3 +7,4 @@
 # Node, Grunt, Bower, general build process files
 bower_components/*
 node_modules/*
+/nbproject/private/
