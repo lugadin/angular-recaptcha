@@ -4,11 +4,11 @@
   "description": "An AngularJS module to ease usage of reCaptcha inside a form",
   "author": "VividCortex",
   "license": "MIT",
-  "homepage": "https://github.com/vividcortex/angular-recaptcha",
+  "homepage": "https://github.com/lugadin/angular-recaptcha",
   "main": "release/angular-recaptcha.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/vividcortex/angular-recaptcha.git"
+    "url": "git://github.com/lugadin/angular-recaptcha.git"
   },
   "devDependencies": {
     "bower": "^1.3.3",
